@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --nav-height: 68px;
+  }
+
+  html {
+    /* Anchor links land below the sticky nav instead of underneath it. */
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--nav-height) + 16px);
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    @apply bg-paper-100 text-slateink-700 antialiased;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    @apply bg-amber-500/30 text-ink-900;
+  }
+
+  /* Visible focus for keyboard users, invisible for mouse users. */
+  :focus-visible {
+    @apply outline-none ring-2 ring-amber-500 ring-offset-2 ring-offset-paper-100;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+
+  /* Small uppercase label used above every section heading. */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em];
+  }
+
+  .card {
+    @apply rounded-2xl border border-paper-300/70 bg-white shadow-card;
+  }
+
+  .tag {
+    @apply inline-flex items-center rounded-full border border-paper-300 bg-paper-50 px-2.5 py-1 text-xs font-medium text-slateink-700;
+  }
+
+  .tag-accent {
+    @apply inline-flex items-center rounded-full border border-amber-500/40 bg-amber-100 px-2.5 py-1 text-xs font-semibold text-amber-600;
+  }
+
+  /* Elements not matching the current requirement filter recede rather than
+     disappear — context stays readable, emphasis still reads clearly. */
+  .dimmed {
+    @apply opacity-40 saturate-50;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  .gradient-ink {
+    background-image: linear-gradient(135deg, #0b1f33 0%, #12304c 45%, #1f4e78 100%);
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(100deg, #ffffff 0%, #cfe3f5 45%, #ff9f43 115%);
+  }
+
+  /* Thin scrollbar for the horizontally scrollable timeline / repo rails. */
+  .rail {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(68, 84, 106, 0.3) transparent;
+  }
+  .rail::-webkit-scrollbar {
+    height: 6px;
+  }
+  .rail::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-slateink-300;
+  }
+}
