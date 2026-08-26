@@ -10,10 +10,6 @@ export function Footer() {
           <p className="font-display text-sm font-semibold text-white">
             {profile.name} <span className="text-amber-500">×</span> Callosum Applied AI
           </p>
-          <p className="mt-1 text-xs text-paper-300/60">
-            Built with Next.js, TypeScript, Tailwind, and Framer Motion. Statically
-            rendered — the page you are reading is the demo.
-          </p>
         </div>
 
         <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs">
