@@ -6,13 +6,17 @@ import type { Metric as MetricType } from '@/lib/data';
 interface MetricProps {
   metric: MetricType;
   tone?: 'light' | 'dark';
-  size?: 'sm' | 'md' | 'lg';
+  size?: 'sm' | 'md' | 'lg' | 'hero';
 }
 
 const sizes = {
   sm: 'text-2xl sm:text-[1.75rem]',
   md: 'text-3xl sm:text-4xl',
   lg: 'text-4xl sm:text-5xl',
+  // Four-up hero strip: steps down between sm and lg, where the track is
+  // narrowest. Grid's default minmax(auto, 1fr) widens a track to fit its
+  // content, so an oversized value here would push the page into scroll.
+  hero: 'text-2xl sm:text-3xl lg:text-4xl',
 };
 
 /**
@@ -26,7 +30,7 @@ export function Metric({ metric, tone = 'light', size = 'md' }: MetricProps) {
   const display = Math.round(value).toLocaleString('en-GB');
 
   return (
-    <div>
+    <div className="min-w-0">
       <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
         <span
           ref={ref}
@@ -57,6 +61,11 @@ export function Metric({ metric, tone = 'light', size = 'md' }: MetricProps) {
       >
         {metric.label}
       </p>
+      {metric.context ? (
+        <p className={`mt-1 text-[11px] ${dark ? 'text-paper-300/55' : 'text-slateink-300'}`}>
+          {metric.context}
+        </p>
+      ) : null}
     </div>
   );
 }

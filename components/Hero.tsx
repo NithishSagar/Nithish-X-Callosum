@@ -5,13 +5,6 @@ import { FiArrowDown, FiGithub, FiExternalLink } from 'react-icons/fi';
 import { profile } from '@/lib/data';
 import { Metric } from './ui/Metric';
 
-const headlineMetrics = [
-  { label: 'p95 inference latency', value: 100, prefix: '<', suffix: 'ms', from: 500, fromSuffix: 'ms' },
-  { label: 'throughput improvement', value: 10, suffix: '×' },
-  { label: 'daily production users', value: 500, suffix: '+' },
-  { label: 'engineers on my platform', value: 60, suffix: '+' },
-];
-
 /**
  * Hero.
  *
@@ -66,20 +59,18 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.14, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-7 max-w-2xl text-pretty text-lg leading-relaxed text-paper-300 sm:text-xl"
+          className="mt-7 max-w-3xl text-balance text-lg font-medium leading-snug text-white sm:text-xl"
         >
-          {profile.tagline}. I have spent my career on the layer where a model meets
-          real hardware, real users, and a latency budget that does not negotiate — and I
-          know which of those constraints I have not met yet.
+          {profile.tagline}
         </motion.p>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-5 max-w-2xl border-l-2 border-amber-500/60 pl-4 text-pretty text-[15px] leading-relaxed text-paper-300/90"
+          className="mt-5 max-w-2xl text-pretty text-[15px] leading-relaxed text-paper-300 sm:text-base"
         >
-          {profile.trade}
+          {profile.pitch}
         </motion.p>
 
         <motion.div
@@ -118,10 +109,10 @@ export function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.34, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-16 grid grid-cols-2 gap-x-6 gap-y-8 border-t border-white/12 pt-8 sm:mt-20 lg:grid-cols-4"
+          className="mt-14 grid grid-cols-2 gap-x-5 gap-y-8 border-t border-white/12 pt-8 sm:mt-16 sm:grid-cols-4 sm:gap-x-6 lg:gap-x-10"
         >
-          {headlineMetrics.map((metric) => (
-            <Metric key={metric.label} metric={metric} tone="dark" size="md" />
+          {profile.coreMetrics.map((metric) => (
+            <Metric key={metric.label} metric={metric} tone="dark" size="hero" />
           ))}
         </motion.div>
       </div>

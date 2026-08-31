@@ -1,7 +1,7 @@
 'use client';
 
 import { FiMapPin, FiBookOpen } from 'react-icons/fi';
-import { profile, coreCompetencies, readiness } from '@/lib/data';
+import { profile, coreCompetencies } from '@/lib/data';
 import { Section } from './ui/Section';
 import { Reveal } from './ui/Reveal';
 
@@ -27,40 +27,12 @@ export function About() {
       eyebrow="About"
       title={
         <>
-          Applied AI engineer with a{' '}
-          <span className="text-ink-700">production track record</span> — not a
-          prototype one.
+          Constraints to be mapped, measured, and{' '}
+          <span className="text-ink-700">optimised</span> — not researched.
         </>
       }
       className="bg-paper-100"
     >
-      {/* Readiness statement — the framing everything below sits inside */}
-      <Reveal>
-        <div className="mb-12 rounded-2xl border border-ink-600/20 bg-white p-6 shadow-card sm:p-8">
-          <h3 className="text-balance font-display text-xl font-bold leading-snug tracking-tight text-ink-900 sm:text-2xl">
-            {readiness.title}
-          </h3>
-          <div className="mt-5 grid gap-x-10 gap-y-4 lg:grid-cols-2">
-            {readiness.body.map((para) => (
-              <p key={para} className="text-pretty text-[15px] leading-relaxed text-slateink-700">
-                {para}
-              </p>
-            ))}
-          </div>
-          <ul className="mt-7 grid gap-2.5 border-t border-paper-200 pt-6 sm:grid-cols-2">
-            {readiness.keyPoints.map((point) => (
-              <li key={point} className="flex gap-2.5 text-sm leading-relaxed text-ink-800">
-                <span
-                  className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-amber-500"
-                  aria-hidden
-                />
-                {point}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </Reveal>
-
       <div className="grid gap-10 lg:grid-cols-[1.35fr_1fr] lg:gap-16">
         {/* Narrative */}
         <div className="space-y-5">

@@ -1,11 +1,16 @@
 'use client';
 
+/**
+ * ARCHIVED — not rendered. Kept because this repository has no git
+ * history to restore from. See the archive banner in lib/data.ts.
+ */
+
 import { motion } from 'framer-motion';
 import { FiArrowDown, FiTarget, FiCheckCircle } from 'react-icons/fi';
 import { learningJourney } from '@/lib/data';
 import type { JourneyPhase } from '@/lib/data';
-import { Section } from './ui/Section';
-import { Reveal } from './ui/Reveal';
+import { Section } from '../ui/Section';
+import { Reveal } from '../ui/Reveal';
 
 /**
  * Learning journey.

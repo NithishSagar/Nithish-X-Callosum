@@ -269,7 +269,7 @@ export function ProjectCard({ project, isOpen, onToggle }: ProjectCardProps) {
                       key={id}
                       type="button"
                       onClick={() => toggleReq(id)}
-                      className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-colors ${
+                      className={`inline-flex min-h-[44px] items-center gap-1.5 rounded-full border px-3.5 text-xs font-medium transition-colors ${
                         effective === id
                           ? 'border-amber-500 bg-amber-500 text-ink-900'
                           : 'border-paper-300 bg-white text-slateink-700 hover:border-ink-600/40 hover:text-ink-700'

@@ -67,7 +67,7 @@ export function Work() {
             <button
               type="button"
               onClick={toggleAll}
-              className="inline-flex items-center gap-2 rounded-full border border-paper-300 bg-white px-3.5 py-2 text-[13px] font-medium text-slateink-700 transition-colors hover:border-ink-600/40 hover:text-ink-700"
+              className="inline-flex min-h-[44px] items-center gap-2 rounded-full border border-paper-300 bg-white px-4 text-[13px] font-medium text-slateink-700 transition-colors hover:border-ink-600/40 hover:text-ink-700"
             >
               {allOpen ? (
                 <>
@@ -97,7 +97,7 @@ export function Work() {
                   type="button"
                   onClick={() => setView(id)}
                   aria-pressed={view === id}
-                  className={`relative inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[13px] font-medium transition-colors ${
+                  className={`relative inline-flex min-h-[38px] items-center gap-1.5 rounded-full px-3.5 text-[13px] font-medium transition-colors ${
                     view === id ? 'text-white' : 'text-slateink-500 hover:text-ink-700'
                   }`}
                 >

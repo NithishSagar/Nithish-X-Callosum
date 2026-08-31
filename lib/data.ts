@@ -16,9 +16,10 @@ export const profile = {
   name: 'Nithish Sagar',
   target: 'Callosum · Applied AI',
   role: 'Member of Technical Staff',
-  tagline: 'What I have built, and what I am ready to learn',
-  trade:
-    'I bring shipping discipline and evaluation rigour. Callosum brings the expertise and the problems worth solving.',
+  tagline:
+    'Applied AI Engineer specialised in high-throughput inference paths and production systems that do not break under load.',
+  pitch:
+    'Most applicants will tell you they are ready to learn your stack. I built my projects assuming I was already on day one at your London office, bridging customer pipelines to frontier silicon. Explore the code below to see if my engineering velocity matches the scale of your roadmap.',
   // Change this to your preferred contact address.
   email: 'nsd8681@gmail.com',
   github: 'https://github.com/NithishSagar',
@@ -31,17 +32,29 @@ export const profile = {
     start: 'September 2025',
   },
   summary: [
-    'I build AI systems that survive contact with production. My CNN inference API was returning in 450–500ms under load; I rebuilt the serving path around a latency budget and brought it under 100ms while taking concurrency from 50 to 500+ users.',
-    'Most of my work has been the unglamorous middle layer — sensors talking to brokers talking to time-series stores talking to browsers, on hardware I had to administer myself. That is where I learned that a system is only as fast as the component whose constraints you failed to model.',
-    'I care about measurement that actually measures. Numbers that come from a sloppy harness are worse than no numbers, because you will build on them.',
+    'Most engineers treat multi-chip orchestration and heterogeneous compute as abstract research problems. I treat them as engineering constraints to be mapped, measured, and optimised. Whether that means driving p95 latency from 500ms to sub-100ms under heavy concurrent load or building deterministic evaluation harnesses, the focus is singular: shipping systems that survive contact with production.',
+    'Callosum is building the software orchestration layer for the next era of intelligence. The code and architecture evaluations below are built to prove one thing — that I have the shipping discipline and systems depth to accelerate your roadmap from day one.',
+    'The portfolio is the argument. Every claim below is filterable against a requirement, and every number states the conditions it was measured under.',
   ],
   repoCount: 25,
-  learningMindset: {
-    principle:
-      'I grow by building, I understand by measuring, and I would rather contribute while learning than wait until I am certain.',
-    commitment:
-      'Not looking for a comfortable role — looking for one where the problems are harder than the ones I have already solved.',
-  },
+  /**
+   * The headline numbers, stated with the conditions they were measured
+   * under. A metric without its conditions is a slogan.
+   */
+  coreMetrics: [
+    {
+      label: 'Inference latency',
+      value: 100,
+      prefix: '<',
+      suffix: 'ms',
+      from: 500,
+      fromSuffix: 'ms',
+      context: 'p95, 500+ concurrent',
+    },
+    { label: 'Throughput', value: 10, suffix: '×', context: 'vs. initial architecture' },
+    { label: 'Production users', value: 500, suffix: '+', context: 'daily active' },
+    { label: 'Platform engineers', value: 60, suffix: '+', context: 'internal tooling scaled' },
+  ],
 } as const;
 
 /* ------------------------------------------------------------------ */
@@ -151,6 +164,8 @@ export interface Metric {
   /** Optional "from" value, e.g. 450ms → 100ms. */
   from?: number;
   fromSuffix?: string;
+  /** The conditions the number was measured under. */
+  context?: string;
 }
 
 /* Chart specs for research projects — plain data, drawn by ResearchCharts. */
@@ -422,9 +437,9 @@ export const projects: Project[] = [
       'Multi-seed evaluation',
       'OFAT sensitivity',
     ],
-    // 'customer' deliberately omitted: solo research demonstrates evaluation
+    // 'customer' deliberately omitted: this project evidences evaluation
     // rigour, not the work of turning an ambiguous user problem into a
-    // shipped system. That gap is named in `readyToLearn` instead.
+    // shipped system. The platform work carries that claim instead.
     requirementIds: ['evaluation', 'depth', 'debugging'],
     architecture: [
       'Expert policy (SAC)',
@@ -433,7 +448,7 @@ export const projects: Project[] = [
       'Fixed gradient budget',
       'Multi-seed evaluation',
     ],
-    note: 'Solo research demonstrates evaluation rigour, not customer-facing problem solving. That gap is named directly in “What I am ready to learn” rather than papered over here.',
+    note: 'Controlled research rather than deployment: this is evaluation methodology, and it is listed as such. The production counterparts are the four systems above.',
     link: {
       label: 'Research repository on GitHub',
       href: 'https://github.com/NithishSagar/Machine-learning-for-robotic-grasping-fundamentals-and-research-gaps',
@@ -689,13 +704,19 @@ export const coreCompetencies = [
   'Multi-seed validation',
   'Honest result reporting',
   'End-to-end production ownership',
-  'Honest about what I do not know',
-  'Learns by building, not by reading',
-  'Comfortable being the least experienced person in the room',
+  'Latency-budget-first architecture',
+  'Production debugging under load',
+  'Systems that stay shipped',
 ];
 
 /* ------------------------------------------------------------------ */
-/* Readiness: what I bring, and what I do not yet have                 */
+/* ARCHIVED — readiness / learning-journey narrative                    */
+/*                                                                     */
+/* Retained, not deleted: this repository has no git history to restore */
+/* from. Nothing in app/page.tsx imports these, so they cost nothing at */
+/* runtime. Their components live in components/_archive/. To bring the */
+/* narrative back, re-add the sections to app/page.tsx and restore the  */
+/* 'learning' and 'ready' entries in navItems.                          */
 /* ------------------------------------------------------------------ */
 
 export const readiness = {
@@ -997,9 +1018,7 @@ export const navItems = [
   { id: 'work', label: 'My Work' },
   { id: 'mapping', label: 'The Mapping' },
   { id: 'perspective', label: 'Perspective' },
-  { id: 'learning', label: 'Learning' },
   { id: 'skills', label: 'Skills' },
-  { id: 'ready', label: 'Next Steps' },
   { id: 'journey', label: 'Journey' },
   { id: 'contact', label: 'Contact' },
 ] as const;
