@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { FiGithub, FiExternalLink, FiMenu, FiX, FiLinkedin } from 'react-icons/fi';
-import { navItems, profile, requirementById } from '@/lib/data';
+import { companyShort, navItems, profile, requirementById } from '@/lib/data';
 import { useActiveSection, useScrolled } from '@/lib/hooks';
 import { useHighlight } from '@/lib/highlight';
 
@@ -51,7 +51,7 @@ export function Nav() {
                 scrolled ? 'text-ink-900' : 'text-white'
               }`}
             >
-              Nithish <span className="text-amber-500">×</span> Callosum
+              Nithish <span className="text-amber-500">×</span> {companyShort}
             </span>
           </a>
 

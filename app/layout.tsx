@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter, Sora } from 'next/font/google';
 import './globals.css';
-import { profile } from '@/lib/data';
+import { companyName, profile } from '@/lib/data';
 
 // Self-hosted at build time by next/font — no render-blocking request to a
 // third-party font CDN, and no layout shift when the face swaps in.
@@ -18,9 +18,8 @@ const sora = Sora({
   display: 'swap',
 });
 
-const title = `${profile.name} × Callosum Applied AI`;
-const description =
-  'Constraint-driven systems design: sub-100ms CNN inference, five-layer IoT orchestration, 500+ daily users in production, and a developer platform for 60+ engineers — mapped to the Callosum Applied AI role.';
+const title = `${profile.name} × ${companyName}`;
+const description = `${profile.tagline} ${profile.summary[0]}`.slice(0, 300);
 
 /**
  * Absolute base for social-card URLs. Vercel injects VERCEL_URL per deployment;
@@ -39,10 +38,10 @@ export const metadata: Metadata = {
   applicationName: title,
   authors: [{ name: profile.name, url: profile.github }],
   keywords: [
-    'Applied AI',
-    'Member of Technical Staff',
+    companyName,
+    profile.role,
     'inference optimisation',
-    'heterogeneous compute',
+    'evaluation rigour',
     'systems engineering',
     profile.name,
   ],

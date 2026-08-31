@@ -6,7 +6,7 @@
  */
 
 import { FiHelpCircle, FiArrowRight } from 'react-icons/fi';
-import { readyToLearn } from '@/lib/data';
+import { readyToLearn } from '@/lib/companies/callosum';
 import { Section } from '../ui/Section';
 import { Reveal } from '../ui/Reveal';
 

@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { FiMail, FiGithub, FiLinkedin, FiExternalLink, FiSend } from 'react-icons/fi';
-import { profile } from '@/lib/data';
+import { companyName, contactPitch, profile } from '@/lib/data';
 import { Reveal } from './ui/Reveal';
 
 const links = [
@@ -25,7 +25,7 @@ export function Contact() {
 
   const mailto = () => {
     const subject = encodeURIComponent(
-      `Callosum · Applied AI — ${name ? `from ${name}` : 'message from your portfolio'}`,
+      `${companyName} — ${name ? `from ${name}` : 'message from your portfolio'}`,
     );
     const body = encodeURIComponent(message + (name ? `\n\n— ${name}` : ''));
     return `mailto:${profile.email}?subject=${subject}&body=${body}`;
@@ -52,15 +52,13 @@ export function Contact() {
                 <span className="text-amber-500">AI infrastructure.</span>
               </h2>
               <p className="mt-6 max-w-xl text-pretty text-base leading-relaxed text-paper-300 sm:text-lg">
-                I have spent four systems learning that the constraint you did not model
-                is the one that decides your latency. I would like to spend the next few
-                years applying that to heterogeneous compute, at Callosum.
+                {contactPitch}
               </p>
             </Reveal>
 
             <Reveal delay={0.1}>
               <a
-                href={`mailto:${profile.email}?subject=${encodeURIComponent('Callosum · Applied AI — Member of Technical Staff')}`}
+                href={`mailto:${profile.email}?subject=${encodeURIComponent(`${companyName} — ${profile.role}`)}`}
                 className="group mt-9 inline-flex items-center gap-3 rounded-full bg-amber-500 px-6 py-4 text-sm font-semibold text-ink-900 shadow-glow transition-transform duration-200 hover:-translate-y-0.5 hover:bg-amber-400"
               >
                 <FiMail className="h-4 w-4" />

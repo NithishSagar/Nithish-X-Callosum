@@ -3,7 +3,7 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { FiChevronDown, FiArrowRight, FiExternalLink, FiFileText } from 'react-icons/fi';
 import type { Project } from '@/lib/data';
-import { requirementById } from '@/lib/data';
+import { companyShort, requirementById } from '@/lib/data';
 import { useHighlight } from '@/lib/highlight';
 import { Metric } from './ui/Metric';
 import { ResearchCharts } from './ResearchCharts';
@@ -215,7 +215,7 @@ export function ProjectCard({ project, isOpen, onToggle }: ProjectCardProps) {
               {/* Why the methodology transfers */}
               {project.whyItMatters?.length ? (
                 <div className="rounded-xl border border-ink-600/20 bg-ink-700/[0.04] p-5">
-                  <h4 className="eyebrow text-ink-600">Why this transfers to Callosum</h4>
+                  <h4 className="eyebrow text-ink-600">Why this transfers to {companyShort}</h4>
                   <ul className="mt-3 grid gap-2.5 sm:grid-cols-2">
                     {project.whyItMatters.map((reason) => (
                       <li

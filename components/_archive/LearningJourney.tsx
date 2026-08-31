@@ -7,8 +7,8 @@
 
 import { motion } from 'framer-motion';
 import { FiArrowDown, FiTarget, FiCheckCircle } from 'react-icons/fi';
-import { learningJourney } from '@/lib/data';
-import type { JourneyPhase } from '@/lib/data';
+import { learningJourney } from '@/lib/companies/callosum';
+import type { JourneyPhase } from '@/lib/companies/types';
 import { Section } from '../ui/Section';
 import { Reveal } from '../ui/Reveal';
 

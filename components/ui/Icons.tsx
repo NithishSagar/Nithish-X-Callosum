@@ -10,7 +10,9 @@ import {
   FiLayers,
   FiMonitor,
   FiServer,
+  FiShield,
   FiTerminal,
+  FiTrendingUp,
   FiTool,
   FiUsers,
   FiZap,
@@ -30,6 +32,12 @@ const registry: Record<string, IconType> = {
   customer: FiUsers,
   founder: FiZap,
   debugging: FiTerminal,
+  // Ineffable requirement icons
+  rl: FiTrendingUp,
+  stats: FiBarChart2,
+  infra: FiServer,
+  systems: FiGitBranch,
+  production: FiShield,
   // Skill-group icons
   backend: FiServer,
   ml: FiCpu,

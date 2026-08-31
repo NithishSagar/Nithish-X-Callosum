@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { FiArrowDown, FiGithub, FiExternalLink } from 'react-icons/fi';
-import { profile } from '@/lib/data';
+import { companyName, profile } from '@/lib/data';
 import { Metric } from './ui/Metric';
 
 /**
@@ -52,7 +52,7 @@ export function Hero() {
           <span className="gradient-text">{profile.name}</span>
           <span className="mx-3 text-amber-500">×</span>
           <br className="hidden sm:block" />
-          Callosum Applied AI
+          {companyName}
         </motion.h1>
 
         <motion.p

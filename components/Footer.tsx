@@ -1,4 +1,4 @@
-import { profile } from '@/lib/data';
+import { companyName, profile } from '@/lib/data';
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -8,7 +8,7 @@ export function Footer() {
       <div className="container-page flex flex-col items-center justify-between gap-5 text-center sm:flex-row sm:text-left">
         <div>
           <p className="font-display text-sm font-semibold text-white">
-            {profile.name} <span className="text-amber-500">×</span> Callosum Applied AI
+            {profile.name} <span className="text-amber-500">×</span> {companyName}
           </p>
         </div>
 
