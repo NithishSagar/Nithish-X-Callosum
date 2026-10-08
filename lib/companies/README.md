@@ -63,6 +63,18 @@ That line is load-bearing. With the variable unset, Next leaves
 every config ships. Measured when there were two: 160 kB unset against 153 kB with the
 default declared.
 
+The same file normalises the value and rejects an unknown one. `selectCompany()` ends in
+`return callosum`, so without that guard `"scope "`, `"Scope"` or `"scoep"` would each
+build a Callosum site and say nothing — the failure shows up as the wrong site on the
+right domain. Surrounding whitespace and casing are now absorbed; a genuine typo fails
+the build. Every build also logs its company:
+
+```
+[build] NEXT_PUBLIC_COMPANY=scope
+```
+
+Read that line in the Vercel build log to confirm what a deployment actually built.
+
 Verified rather than assumed, in both directions:
 
 ```bash
@@ -142,8 +154,11 @@ Adding a theme is a new `:root[data-theme='…']` block plus a value on `Theme` 
    will tell you what `CompanyConfig` still needs — including `sections`.
 2. Add it to `companies` in `index.ts`.
 3. Add one line to `selectCompany()` in `../getCompany.ts`.
-4. Pick a `theme`, or leave it off for `'ink'`.
-5. Create a Vercel project with `NEXT_PUBLIC_COMPANY=<name>`.
+4. Add the key to `KNOWN_COMPANIES` in `../../next.config.mjs`. That file is plain ESM
+   and cannot import this TypeScript registry, so the list is duplicated there; miss this
+   step and the build rejects the new key.
+5. Pick a `theme`, or leave it off for `'ink'`.
+6. Create a Vercel project with `NEXT_PUBLIC_COMPANY=<name>`.
 
 No component changes. If a component needs company-specific copy, **add a field to
 `CompanyConfig`** rather than a conditional in the component.
