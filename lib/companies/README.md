@@ -99,6 +99,7 @@ hardcoded company string in a component was a bug waiting for the second company
 
 | Property | `ink` | `framer` |
 | --- | --- | --- |
+| `--font-display` | `var(--font-sora)` | `var(--font-inter)` |
 | `--accent-500` | `255 159 67` (amber) | `96 165 250` (blue) |
 | `--hero-size` | `clamp(2.6rem, 7vw, 4.25rem)` | `clamp(3rem, 8.5vw, 5.25rem)` |
 | `--section-size` | `clamp(1.875rem, 4vw, 2.75rem)` | `clamp(2rem, 5vw, 3.5rem)` |
@@ -110,7 +111,20 @@ Components reach these through three class hooks — `.hero-title`, `.section-ti
 `rgb(var(--accent-500) / <alpha-value>)` so opacity modifiers like `bg-accent-500/15`
 keep working across themes.
 
-Two rules keep this honest:
+Typefaces switch the same way, with one wrinkle: `next/font` hashes filenames at build
+time, so a typeface cannot be chosen from a runtime value. Both faces are therefore
+loaded in `app/layout.tsx`, each exposing its own variable, and `--font-display` aliases
+whichever one the theme wants:
+
+```css
+:root                      { --font-display: var(--font-sora);  }  /* geometric */
+:root[data-theme='framer'] { --font-display: var(--font-inter); }  /* Framer house look */
+```
+
+The cost is one unused family per build. It buys each site its own typographic identity
+without a component ever naming a font.
+
+Three rules keep this honest:
 
 - **Channels, not colours.** The custom properties hold space-separated RGB channels, not
   `#hex` or `rgb()` strings, because Tailwind's `<alpha-value>` substitution needs the

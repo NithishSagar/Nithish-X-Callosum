@@ -13,6 +13,11 @@
     --accent-400: 255 184 112;
     --accent-100: 255 241 224;
 
+    /* Display face. Sora's geometric headings are the 'ink' identity; the
+       'framer' theme swaps in Inter below. Both are loaded by app/layout.tsx,
+       so this is a pure variable switch — no component branches on theme. */
+    --font-display: var(--font-sora);
+
     /* Type scale and rhythm. Overridden per theme below. */
     --hero-size: clamp(2.6rem, 7vw, 4.25rem);
     --hero-leading: 1.04;
@@ -31,6 +36,9 @@
    * hero, where #2563EB would fail contrast at the 11px eyebrow size.
    */
   :root[data-theme='framer'] {
+    /* Inter for headings as well as body — the Framer house look. */
+    --font-display: var(--font-inter);
+
     --accent-600: 37 99 235;
     --accent-500: 96 165 250;
     --accent-400: 147 197 253;

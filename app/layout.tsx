@@ -5,6 +5,11 @@ import { companyName, profile, theme } from '@/lib/data';
 
 // Self-hosted at build time by next/font — no render-blocking request to a
 // third-party font CDN, and no layout shift when the face swaps in.
+//
+// Both faces load on every build, and `--font-display` picks between them per
+// theme in globals.css: Sora for 'ink', Inter for 'framer'. Loading both is
+// the cost of keeping that switch in CSS — next/font hashes filenames at build
+// time, so there is no way to select a typeface from a runtime value.
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
@@ -14,7 +19,7 @@ const inter = Inter({
 const sora = Sora({
   subsets: ['latin'],
   weight: ['500', '600', '700', '800'],
-  variable: '--font-display',
+  variable: '--font-sora',
   display: 'swap',
 });
 
