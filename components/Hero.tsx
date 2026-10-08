@@ -47,7 +47,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.06, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-6 max-w-4xl text-balance font-display text-[2.6rem] font-extrabold leading-[1.04] tracking-[-0.02em] text-white sm:text-6xl lg:text-[4.25rem]"
+          className="hero-title mt-6 max-w-4xl text-balance font-display font-extrabold text-white"
         >
           <span className="gradient-text">{profile.name}</span>
           <span className="mx-3 text-amber-500">×</span>

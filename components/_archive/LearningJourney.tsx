@@ -26,14 +26,12 @@ export function LearningJourney() {
   return (
     <Section
       id="learning"
-      eyebrow="Learning Journey"
-      title={
-        <>
-          How I learn — and what each step{' '}
-          <span className="text-ink-700">could not teach me.</span>
-        </>
-      }
-      lede={learningJourney.lede}
+      copy={{
+        eyebrow: 'Learning Journey',
+        title: 'How I learn — and what each step',
+        titleAccent: 'could not teach me.',
+        lede: learningJourney.lede,
+      }}
       className="bg-white"
     >
       <div className="relative">

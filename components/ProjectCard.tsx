@@ -248,7 +248,7 @@ export function ProjectCard({ project, isOpen, onToggle }: ProjectCardProps) {
                     href={project.link.href}
                     target="_blank"
                     rel="noreferrer noopener"
-                    className="inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold text-ink-700 transition-colors hover:text-amber-600"
+                    className="inline-flex min-h-[44px] shrink-0 items-center gap-1.5 text-sm font-semibold text-ink-700 transition-colors hover:text-amber-600"
                   >
                     {project.link.label}
                     <FiExternalLink className="h-3.5 w-3.5" />

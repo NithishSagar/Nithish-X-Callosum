@@ -17,7 +17,7 @@ export function Footer() {
             href={profile.github}
             target="_blank"
             rel="noreferrer noopener"
-            className="text-paper-300/70 transition-colors hover:text-amber-500"
+            className="inline-flex min-h-[44px] items-center text-paper-300/70 transition-colors hover:text-amber-500"
           >
             GitHub
           </a>
@@ -25,13 +25,13 @@ export function Footer() {
             href={profile.portfolio}
             target="_blank"
             rel="noreferrer noopener"
-            className="text-paper-300/70 transition-colors hover:text-amber-500"
+            className="inline-flex min-h-[44px] items-center text-paper-300/70 transition-colors hover:text-amber-500"
           >
             Portfolio
           </a>
           <a
             href={`mailto:${profile.email}`}
-            className="text-paper-300/70 transition-colors hover:text-amber-500"
+            className="inline-flex min-h-[44px] items-center text-paper-300/70 transition-colors hover:text-amber-500"
           >
             Email
           </a>

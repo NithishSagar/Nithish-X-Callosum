@@ -1,7 +1,7 @@
 'use client';
 
 import { FiMapPin, FiBookOpen } from 'react-icons/fi';
-import { profile, coreCompetencies } from '@/lib/data';
+import { profile, coreCompetencies, sections } from '@/lib/data';
 import { Section } from './ui/Section';
 import { Reveal } from './ui/Reveal';
 
@@ -24,13 +24,7 @@ export function About() {
   return (
     <Section
       id="about"
-      eyebrow="About"
-      title={
-        <>
-          Constraints to be mapped, measured, and{' '}
-          <span className="text-ink-700">optimised</span> — not researched.
-        </>
-      }
+      copy={sections.about}
       className="bg-paper-100"
     >
       <div className="grid gap-10 lg:grid-cols-[1.35fr_1fr] lg:gap-16">

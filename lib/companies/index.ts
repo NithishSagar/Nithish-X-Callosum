@@ -1,6 +1,7 @@
 import type { CompanyConfig } from './types';
 import callosum from './callosum';
 import ineffable from './ineffable';
+import scope from './scope';
 
 /**
  * Every company this codebase can build as.
@@ -14,6 +15,7 @@ import ineffable from './ineffable';
 export const companies = {
   callosum,
   ineffable,
+  scope,
   // Adding a company: write lib/companies/<name>.ts satisfying CompanyConfig,
   // add it here, then add a branch to selectCompany() in lib/getCompany.ts.
 } satisfies Record<string, CompanyConfig>;

@@ -1,6 +1,7 @@
 import type { CompanyConfig } from './companies/types';
 import callosum from './companies/callosum';
 import ineffable from './companies/ineffable';
+import scope from './companies/scope';
 import { DEFAULT_COMPANY, type CompanyKey } from './companies';
 
 /**
@@ -16,6 +17,7 @@ import { DEFAULT_COMPANY, type CompanyKey } from './companies';
  */
 function selectCompany(): CompanyConfig {
   if (process.env.NEXT_PUBLIC_COMPANY === 'ineffable') return ineffable;
+  if (process.env.NEXT_PUBLIC_COMPANY === 'scope') return scope;
   if (process.env.NEXT_PUBLIC_COMPANY === 'callosum') return callosum;
   return callosum;
 }

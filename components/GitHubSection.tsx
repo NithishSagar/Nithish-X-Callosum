@@ -1,7 +1,7 @@
 'use client';
 
 import { FiGithub, FiStar, FiArrowUpRight } from 'react-icons/fi';
-import { profile, repos, githubStats } from '@/lib/data';
+import { profile, repos, githubStats, sections } from '@/lib/data';
 import { Section } from './ui/Section';
 import { Reveal } from './ui/Reveal';
 import { Metric } from './ui/Metric';
@@ -17,14 +17,7 @@ export function GitHubSection() {
   return (
     <Section
       id="github"
-      eyebrow="Code"
-      title={
-        <>
-          {profile.repoCount} repositories tracking the same{' '}
-          <span className="text-ink-700">progression.</span>
-        </>
-      }
-      lede="College projects through to production systems. The interesting part is not any single repository — it is that the shipping never stopped."
+      copy={sections.code}
       className="border-y border-paper-300/60 bg-white"
     >
       {/* Stats strip */}

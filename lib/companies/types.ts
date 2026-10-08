@@ -182,6 +182,44 @@ export interface Profile {
   coreMetrics: readonly Metric[];
 }
 
+/**
+ * One section heading.
+ *
+ * `title` + `titleAccent` reproduce the two-tone heading the design uses
+ * everywhere: the accent half renders in the brand colour. Splitting it in data
+ * rather than embedding JSX keeps the content layer free of React.
+ */
+export interface SectionCopy {
+  eyebrow: string;
+  title: string;
+  titleAccent?: string;
+  lede?: string;
+}
+
+/** Every section heading on the page. */
+export interface SectionsCopy {
+  about: SectionCopy;
+  role: SectionCopy;
+  work: SectionCopy;
+  mapping: SectionCopy;
+  perspective: SectionCopy;
+  skills: SectionCopy;
+  journey: SectionCopy;
+  code: SectionCopy;
+  contact: SectionCopy;
+}
+
+/**
+ * Visual treatment.
+ *
+ *   'ink'    — the original: tight type scale, amber accent.
+ *   'framer' — large type, more generous spacing, blue accent.
+ *
+ * Applied as `data-theme` on <html>; the overrides live in app/globals.css.
+ * Components do not branch on it.
+ */
+export type Theme = 'ink' | 'framer';
+
 export interface NavItem {
   id: string;
   label: string;
@@ -203,6 +241,10 @@ export interface CompanyConfig {
   companyShort: string;
   /** Closing paragraph in the contact section — company-specific by nature. */
   contactPitch: string;
+  /** Visual treatment. Defaults to 'ink' when omitted. */
+  theme?: Theme;
+  /** Every section heading. */
+  sections: SectionsCopy;
   profile: Profile;
   requirements: readonly Requirement[];
   projects: readonly Project[];

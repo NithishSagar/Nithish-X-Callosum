@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { FiArrowRight, FiRotateCw } from 'react-icons/fi';
-import { perspective } from '@/lib/data';
+import { perspective, sections } from '@/lib/data';
 import { Section } from './ui/Section';
 import { Reveal } from './ui/Reveal';
 
@@ -27,15 +27,10 @@ export function Perspective() {
 
       <Section
         id="perspective"
-        eyebrow="My Perspective"
-        tone="dark"
-        title={
-          <>
-            Why this matters:{' '}
-            <span className="text-amber-500">{perspective.title}</span>
-          </>
-        }
+        copy={sections.perspective}
         lede={perspective.lede}
+        titleAccent={perspective.title}
+        tone="dark"
       >
         {/* Pull quote */}
         <Reveal>

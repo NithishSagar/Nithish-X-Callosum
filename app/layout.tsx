@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter, Sora } from 'next/font/google';
 import './globals.css';
-import { companyName, profile } from '@/lib/data';
+import { companyName, profile, theme } from '@/lib/data';
 
 // Self-hosted at build time by next/font — no render-blocking request to a
 // third-party font CDN, and no layout shift when the face swaps in.
@@ -67,7 +67,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${sora.variable}`}>
+    <html lang="en" data-theme={theme} className={`${inter.variable} ${sora.variable}`}>
       <body>
         <a
           href="#about"

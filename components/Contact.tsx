@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { FiMail, FiGithub, FiLinkedin, FiExternalLink, FiSend } from 'react-icons/fi';
-import { companyName, contactPitch, profile } from '@/lib/data';
+import { companyName, contactPitch, profile, sections } from '@/lib/data';
 import { Reveal } from './ui/Reveal';
 
 const links = [
@@ -45,11 +45,11 @@ export function Contact() {
             <Reveal>
               <p className="eyebrow text-amber-500">
                 <span className="inline-block h-px w-6 bg-amber-500/70" aria-hidden />
-                Let&rsquo;s talk
+                {sections.contact.eyebrow}
               </p>
-              <h2 className="mt-4 text-balance font-display text-3xl font-bold leading-[1.12] tracking-tight text-white sm:text-4xl lg:text-[2.75rem]">
-                Let&rsquo;s build the next generation of{' '}
-                <span className="text-amber-500">AI infrastructure.</span>
+              <h2 className="section-title mt-4 text-balance font-display font-bold tracking-tight text-white">
+                {sections.contact.title}{' '}
+                <span className="text-amber-500">{sections.contact.titleAccent}</span>
               </h2>
               <p className="mt-6 max-w-xl text-pretty text-base leading-relaxed text-paper-300 sm:text-lg">
                 {contactPitch}
@@ -74,7 +74,7 @@ export function Contact() {
                       href={href}
                       target="_blank"
                       rel="noreferrer noopener"
-                      className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 transition-colors duration-200 hover:border-amber-500/40 hover:bg-white/[0.08]"
+                      className="flex min-h-[44px] items-center gap-3 rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 transition-colors duration-200 hover:border-amber-500/40 hover:bg-white/[0.08]"
                     >
                       <LinkIcon className="h-4 w-4 shrink-0 text-amber-500" aria-hidden />
                       <span className="min-w-0">

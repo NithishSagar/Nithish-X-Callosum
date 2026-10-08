@@ -6,6 +6,7 @@
  */
 import type {
   CompanyConfig,
+  SectionsCopy,
   JourneyPhase,
   MappingRow,
   Metric,
@@ -880,6 +881,68 @@ export const navItems = [
   { id: 'contact', label: 'Contact' },
 ] as const;
 
+
+/* ------------------------------------------------------------------ */
+/* Section headings                                                    */
+/* ------------------------------------------------------------------ */
+
+const sections: SectionsCopy = {
+  about: {
+    eyebrow: 'About',
+    title: 'Constraints to be mapped, measured, and',
+    titleAccent: 'optimised — not researched.',
+  },
+  role: {
+    eyebrow: 'The Role',
+    title: 'What Callosum is asking for — and how I read each line',
+    titleAccent: 'of it.',
+  },
+  work: {
+    eyebrow: 'My Work',
+    title: 'Four systems that had to work when I was not watching — and one',
+    titleAccent: 'study that questioned itself.',
+    lede:
+      'Each card opens onto the full story: the constraint that bound the system, the decisions that fit inside it, the measured result, and the part that generalises. The research card opens onto figures instead.',
+  },
+  mapping: {
+    eyebrow: 'The Mapping',
+    title: 'Every requirement, answered by something I',
+    titleAccent: 'actually shipped.',
+    lede:
+      'Left: what the role asks for, in the order the description states it. Right: the evidence, in the order I would argue it. Hover a row to trace the connection; click to filter the whole page.',
+  },
+  perspective: {
+    eyebrow: 'My Perspective',
+    title: 'Why this matters:',
+  },
+  skills: {
+    eyebrow: 'Skills',
+    title: 'The tools, and where each one was',
+    titleAccent: 'earned.',
+    lede:
+      'Depth here means production use under load, not tutorial completion. Where a skill was proven on a specific system, it says so.',
+  },
+  journey: {
+    eyebrow: 'Journey',
+    title: 'From projects that had to work, to platforms other',
+    titleAccent: 'people work on.',
+    lede:
+      'The through-line is scope: each step handed me a wider blast radius, and the discipline had to grow to match it.',
+  },
+  code: {
+    eyebrow: 'Code',
+    title: '25 repositories tracking the same',
+    titleAccent: 'progression.',
+    lede:
+      'College projects through to production systems. The interesting part is not any single repository — it is that the shipping never stopped.',
+  },
+  contact: {
+    eyebrow: 'Let’s talk',
+    title: 'Let’s build the next generation of',
+    titleAccent: 'AI infrastructure.',
+  },
+};
+
 /* ------------------------------------------------------------------ */
 /* Config                                                              */
 /* ------------------------------------------------------------------ */
@@ -901,6 +964,8 @@ const callosum: CompanyConfig = {
   repos,
   githubStats,
   navItems,
+  sections,
+  theme: 'ink',
 };
 
 export default callosum;

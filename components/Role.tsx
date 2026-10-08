@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { FiCheck, FiFilter } from 'react-icons/fi';
-import { companyShort, requirements, projects, mapping, profile } from '@/lib/data';
+import { requirements, projects, mapping, profile, sections } from '@/lib/data';
 import type { RequirementId } from '@/lib/data';
 import { useHighlight } from '@/lib/highlight';
 import { Section } from './ui/Section';
@@ -21,13 +21,7 @@ export function Role() {
   return (
     <Section
       id="role"
-      eyebrow="The Role"
-      title={
-        <>
-          What {companyShort} is asking for — and how I read each line{' '}
-          <span className="text-ink-700">of it.</span>
-        </>
-      }
+      copy={sections.role}
       lede={`${requirements.length} requirements pulled from the ${profile.role} description. Select any one and the rest of this page filters to the evidence that answers it.`}
       className="border-y border-paper-300/60 bg-white"
     >

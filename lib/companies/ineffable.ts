@@ -7,6 +7,7 @@
  */
 import type {
   CompanyConfig,
+  SectionsCopy,
   MappingRow,
   Project,
   Repo,
@@ -621,6 +622,68 @@ const navItems = [
   { id: 'contact', label: 'Contact' },
 ];
 
+
+/* ------------------------------------------------------------------ */
+/* Section headings                                                    */
+/* ------------------------------------------------------------------ */
+
+const sections: SectionsCopy = {
+  about: {
+    eyebrow: 'About',
+    title: 'Reinforcement learning treated as an engineering constraint —',
+    titleAccent: 'not a literature review.',
+  },
+  role: {
+    eyebrow: 'The Role',
+    title: 'What Ineffable is asking for — and how I read each line',
+    titleAccent: 'of it.',
+  },
+  work: {
+    eyebrow: 'My Work',
+    title: 'One controlled study, and three systems that had to hold up',
+    titleAccent: 'under real load.',
+    lede:
+      'Each card opens onto the full story: the question or constraint, the decisions that fit inside it, the measured result, and the part that generalises. The research card opens onto figures.',
+  },
+  mapping: {
+    eyebrow: 'The Mapping',
+    title: 'Every requirement, answered by something I',
+    titleAccent: 'measured or shipped.',
+    lede:
+      'Left: what the role asks for, in the order it states them. Right: the evidence, in the order I would argue it. Hover a row to trace the connection; click to filter the whole page.',
+  },
+  perspective: {
+    eyebrow: 'My Perspective',
+    title: 'Why this matters:',
+  },
+  skills: {
+    eyebrow: 'Skills',
+    title: 'The tools, and where each one was',
+    titleAccent: 'earned.',
+    lede:
+      'Depth here means production use under load or a result that survived multiple seeds — not tutorial completion.',
+  },
+  journey: {
+    eyebrow: 'Journey',
+    title: 'From systems that had to run, to results that had to',
+    titleAccent: 'hold up.',
+    lede:
+      'The through-line is scope: each step widened the blast radius, and the measurement discipline had to grow to match it.',
+  },
+  code: {
+    eyebrow: 'Code',
+    title: '25 repositories tracking the same',
+    titleAccent: 'progression.',
+    lede:
+      'Project work through to production systems and controlled research. The interesting part is not any single repository — it is that the shipping never stopped.',
+  },
+  contact: {
+    eyebrow: 'Let’s talk',
+    title: 'Let’s build the infrastructure that makes',
+    titleAccent: 'learning scale.',
+  },
+};
+
 /* ------------------------------------------------------------------ */
 /* Config                                                              */
 /* ------------------------------------------------------------------ */
@@ -642,6 +705,8 @@ const ineffable: CompanyConfig = {
   repos,
   githubStats,
   navItems,
+  sections,
+  theme: 'ink',
 };
 
 export default ineffable;

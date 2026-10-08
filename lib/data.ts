@@ -27,7 +27,10 @@ export const {
   companyName,
   companyShort,
   contactPitch,
+  sections,
 } = activeCompany;
+
+export const theme = activeCompany.theme ?? 'ink';
 
 /** Lookup used by the Role, Mapping, and ProjectCard components. */
 export const requirementById = Object.fromEntries(
@@ -52,7 +55,10 @@ export type {
   Repo,
   Requirement,
   RequirementId,
+  SectionCopy,
+  SectionsCopy,
   SeriesPoint,
   SkillGroup,
+  Theme,
   TimelineItem,
 } from './companies/types';

@@ -36,7 +36,7 @@ export function Nav() {
           {/* Wordmark */}
           <a
             href="#top"
-            className="group flex shrink-0 items-center gap-2.5"
+            className="group flex min-h-[44px] shrink-0 items-center gap-2.5"
             aria-label="Back to top"
           >
             <span
@@ -96,7 +96,7 @@ export function Nav() {
               target="_blank"
               rel="noreferrer noopener"
               aria-label="GitHub profile"
-              className={`grid h-11 w-11 place-items-center rounded-full transition-colors sm:h-9 sm:w-9 ${
+              className={`grid h-11 w-11 place-items-center rounded-full transition-colors lg:h-9 lg:w-9 ${
                 scrolled
                   ? 'text-slateink-500 hover:bg-paper-200 hover:text-ink-700'
                   : 'text-white/75 hover:bg-white/10 hover:text-white'
@@ -109,7 +109,7 @@ export function Nav() {
               target="_blank"
               rel="noreferrer noopener"
               aria-label="LinkedIn profile"
-              className={`hidden h-9 w-9 place-items-center rounded-full transition-colors sm:grid ${
+              className={`hidden h-11 w-11 place-items-center rounded-full transition-colors sm:grid lg:h-9 lg:w-9 ${
                 scrolled
                   ? 'text-slateink-500 hover:bg-paper-200 hover:text-ink-700'
                   : 'text-white/75 hover:bg-white/10 hover:text-white'
@@ -121,7 +121,7 @@ export function Nav() {
               href={profile.portfolio}
               target="_blank"
               rel="noreferrer noopener"
-              className={`hidden items-center gap-1.5 rounded-full px-3.5 py-2 text-[13px] font-semibold transition-colors sm:inline-flex ${
+              className={`hidden min-h-[44px] items-center gap-1.5 rounded-full px-3.5 py-2 text-[13px] font-semibold transition-colors sm:inline-flex lg:min-h-0 ${
                 scrolled
                   ? 'bg-ink-700 text-white hover:bg-ink-800'
                   : 'bg-white/12 text-white ring-1 ring-white/25 hover:bg-white/20'
@@ -199,7 +199,7 @@ export function Nav() {
               <button
                 type="button"
                 onClick={clear}
-                className="inline-flex min-h-[36px] shrink-0 items-center rounded-full bg-white/10 px-3.5 text-xs font-semibold transition-colors hover:bg-white/20"
+                className="inline-flex min-h-[44px] shrink-0 items-center rounded-full bg-white/10 px-3.5 text-xs font-semibold transition-colors hover:bg-white/20"
               >
                 Clear
               </button>

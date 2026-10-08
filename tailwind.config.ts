@@ -29,12 +29,18 @@ const config: Config = {
           500: '#6B7A91',
           300: '#A7B1C0',
         },
+        /**
+         * The accent. Kept under the `amber` key so the ~100 existing
+         * `amber-*` utilities keep working, but the values now come from CSS
+         * variables so a theme can swap the colour without touching markup.
+         * `<alpha-value>` preserves modifiers like `amber-500/30`.
+         */
         amber: {
-          DEFAULT: '#FF9F43',
-          600: '#F08A22',
-          500: '#FF9F43',
-          400: '#FFB870',
-          100: '#FFF1E0',
+          DEFAULT: 'rgb(var(--accent-500) / <alpha-value>)',
+          600: 'rgb(var(--accent-600) / <alpha-value>)',
+          500: 'rgb(var(--accent-500) / <alpha-value>)',
+          400: 'rgb(var(--accent-400) / <alpha-value>)',
+          100: 'rgb(var(--accent-100) / <alpha-value>)',
         },
         paper: {
           DEFAULT: '#F5F5F5',
@@ -52,7 +58,7 @@ const config: Config = {
       boxShadow: {
         card: '0 1px 2px rgba(11,31,51,0.04), 0 8px 24px -12px rgba(11,31,51,0.14)',
         lift: '0 2px 4px rgba(11,31,51,0.05), 0 24px 48px -20px rgba(11,31,51,0.28)',
-        glow: '0 0 0 1px rgba(255,159,67,0.35), 0 12px 40px -16px rgba(255,159,67,0.55)',
+        glow: '0 0 0 1px rgb(var(--accent-500) / 0.35), 0 12px 40px -16px rgb(var(--accent-500) / 0.55)',
       },
       backgroundImage: {
         'grid-faint':

@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiArrowRight } from 'react-icons/fi';
-import { mapping, requirements, requirementById, projects } from '@/lib/data';
+import { mapping, requirements, requirementById, projects, sections } from '@/lib/data';
 import type { RequirementId } from '@/lib/data';
 import { useHighlight } from '@/lib/highlight';
 import { usePrefersReducedMotion } from '@/lib/hooks';
@@ -112,14 +112,7 @@ export function Mapping() {
   return (
     <Section
       id="mapping"
-      eyebrow="The Mapping"
-      title={
-        <>
-          Every requirement, answered by something I{' '}
-          <span className="text-ink-700">actually shipped.</span>
-        </>
-      }
-      lede="Left: what the role asks for, in the order the description states it. Right: the evidence, in the order I would argue it. Hover a row to trace the connection; click to filter the whole page."
+      copy={sections.mapping}
       className="border-y border-paper-300/60 bg-white"
     >
       <div ref={containerRef} className="relative grid gap-6 lg:grid-cols-2 lg:gap-x-32">

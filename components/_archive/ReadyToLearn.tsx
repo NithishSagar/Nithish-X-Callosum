@@ -22,14 +22,13 @@ export function ReadyToLearn() {
   return (
     <Section
       id="ready"
-      eyebrow="Next Steps"
-      title={
-        <>
-          Gaps I know I have, and problems I{' '}
-          <span className="text-ink-700">would like to work on.</span>
-        </>
-      }
-      lede="Everything above argues from work already done. This section does the opposite — these are the four things I cannot yet claim, and what it would take to change that."
+      copy={{
+        eyebrow: 'Next Steps',
+        title: 'Gaps I know I have, and problems I',
+        titleAccent: 'would like to work on.',
+        lede:
+          'Everything above argues from work already done. This section does the opposite — these are the four things I cannot yet claim, and what it would take to change that.',
+      }}
       className="border-y border-paper-300/60 bg-white"
     >
       <ul className="grid gap-4 lg:grid-cols-2">

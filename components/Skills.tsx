@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { skillGroups } from '@/lib/data';
+import { skillGroups, sections } from '@/lib/data';
 import { Section } from './ui/Section';
 import { Reveal } from './ui/Reveal';
 import { Icon } from './ui/Icons';
@@ -17,14 +17,7 @@ export function Skills() {
   return (
     <Section
       id="skills"
-      eyebrow="Skills"
-      title={
-        <>
-          The tools, and where each one was{' '}
-          <span className="text-ink-700">earned.</span>
-        </>
-      }
-      lede="Depth here means production use under load, not tutorial completion. Where a skill was proven on a specific system, it says so."
+      copy={sections.skills}
       className="bg-paper-100"
     >
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

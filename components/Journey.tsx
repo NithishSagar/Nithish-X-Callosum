@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { timeline } from '@/lib/data';
+import { timeline, sections } from '@/lib/data';
 import { Section } from './ui/Section';
 import { Reveal } from './ui/Reveal';
 
@@ -16,14 +16,7 @@ export function Journey() {
   return (
     <Section
       id="journey"
-      eyebrow="Journey"
-      title={
-        <>
-          From projects that had to work, to platforms other{' '}
-          <span className="text-ink-700">people work on.</span>
-        </>
-      }
-      lede="The through-line is scope: each step handed me a wider blast radius, and the discipline had to grow to match it."
+      copy={sections.journey}
       className="bg-paper-100"
     >
       <div className="relative">

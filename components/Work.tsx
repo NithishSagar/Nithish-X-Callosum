@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiGrid, FiList, FiMaximize2, FiMinimize2 } from 'react-icons/fi';
-import { projects } from '@/lib/data';
+import { projects, sections } from '@/lib/data';
 import { useHighlight } from '@/lib/highlight';
 import { Section } from './ui/Section';
 import { Reveal } from './ui/Reveal';
@@ -36,14 +36,7 @@ export function Work() {
   return (
     <Section
       id="work"
-      eyebrow="My Work"
-      title={
-        <>
-          Four systems that had to work when I was not watching — and one{' '}
-          <span className="text-ink-700">study that questioned itself.</span>
-        </>
-      }
-      lede="Each card opens onto the full story: the constraint that bound the system, the decisions that fit inside it, the measured result, and the part that generalises. The research card opens onto figures instead."
+      copy={sections.work}
       className="bg-paper-100"
     >
       {/* Controls */}
@@ -97,7 +90,7 @@ export function Work() {
                   type="button"
                   onClick={() => setView(id)}
                   aria-pressed={view === id}
-                  className={`relative inline-flex min-h-[38px] items-center gap-1.5 rounded-full px-3.5 text-[13px] font-medium transition-colors ${
+                  className={`relative inline-flex min-h-[44px] items-center gap-1.5 rounded-full px-3.5 text-[13px] font-medium transition-colors ${
                     view === id ? 'text-white' : 'text-slateink-500 hover:text-ink-700'
                   }`}
                 >
