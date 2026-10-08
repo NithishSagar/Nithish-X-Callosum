@@ -1,26 +1,43 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter, Sora } from 'next/font/google';
+import localFont from 'next/font/local';
 import './globals.css';
 import { companyName, profile, theme } from '@/lib/data';
 
-// Self-hosted at build time by next/font — no render-blocking request to a
-// third-party font CDN, and no layout shift when the face swaps in.
+// Fonts are vendored in public/fonts and loaded from disk, so a build never
+// touches the network. This replaced next/font/google after a cold build
+// failed on a flaky Google Fonts fetch: the loader crashed inside
+// @next/font parsing the response, which on a CI builder is a red deployment
+// with no retry.
+//
+// One latin-subset variable file per family. next/font/google split each
+// family across seven unicode-range subsets (greek, cyrillic, vietnamese and
+// so on), but next/font/local has no `unicode-range` option and the site uses
+// nothing outside latin — verified by scanning every config and component for
+// non-ASCII codepoints. A browser only fetches a subset whose range the page
+// actually uses, so the other six were never downloaded anyway.
+//
+// `adjustFontFallback: 'Arial'` reproduces the metric-override fallback face
+// that next/font/google generated, which is what keeps the swap from shifting
+// layout.
 //
 // Both faces load on every build, and `--font-display` picks between them per
-// theme in globals.css: Sora for 'ink', Inter for 'framer'. Loading both is
-// the cost of keeping that switch in CSS — next/font hashes filenames at build
-// time, so there is no way to select a typeface from a runtime value.
-const inter = Inter({
-  subsets: ['latin'],
+// theme in globals.css: Sora for 'ink', Inter for 'framer'.
+const inter = localFont({
+  src: '../public/fonts/inter-latin-variable.woff2',
+  weight: '100 900',
+  style: 'normal',
   variable: '--font-inter',
   display: 'swap',
+  adjustFontFallback: 'Arial',
 });
 
-const sora = Sora({
-  subsets: ['latin'],
-  weight: ['500', '600', '700', '800'],
+const sora = localFont({
+  src: '../public/fonts/sora-latin-variable.woff2',
+  weight: '100 800',
+  style: 'normal',
   variable: '--font-sora',
   display: 'swap',
+  adjustFontFallback: 'Arial',
 });
 
 const title = `${profile.name} × ${companyName}`;

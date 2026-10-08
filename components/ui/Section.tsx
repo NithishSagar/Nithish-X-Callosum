@@ -51,7 +51,7 @@ export function Section({
             {copy.eyebrow}
           </p>
           <h2
-            className={`section-title mt-4 max-w-4xl text-balance font-display font-bold tracking-tight ${
+            className={`section-title mt-4 max-w-4xl text-balance font-display ${
               dark ? 'text-white' : 'text-ink-900'
             }`}
           >
@@ -65,7 +65,7 @@ export function Section({
           </h2>
           {body ? (
             <p
-              className={`mt-5 max-w-2xl text-pretty text-base leading-relaxed sm:text-lg ${
+              className={`lede mt-5 max-w-2xl text-pretty ${
                 dark ? 'text-paper-300' : 'text-slateink-500'
               }`}
             >
@@ -74,7 +74,7 @@ export function Section({
           ) : null}
         </Reveal>
 
-        <div className="mt-12 sm:mt-14">{children}</div>
+        <div className="section-head-gap">{children}</div>
       </div>
     </section>
   );

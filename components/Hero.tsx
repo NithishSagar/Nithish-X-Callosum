@@ -32,7 +32,7 @@ export function Hero() {
         className="pointer-events-none absolute inset-0 -z-10 bg-grid-faint bg-grid opacity-[0.5] [mask-image:radial-gradient(ellipse_at_center,black_20%,transparent_78%)]"
       />
 
-      <div className="container-page relative w-full py-20 sm:py-24">
+      <div className="container-page hero-pad relative w-full">
         <motion.p
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
@@ -47,7 +47,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.06, ease: [0.22, 1, 0.36, 1] }}
-          className="hero-title mt-6 max-w-4xl text-balance font-display font-extrabold text-white"
+          className="hero-title mt-6 max-w-4xl text-balance font-display text-white"
         >
           <span className="gradient-text">{profile.name}</span>
           <span className="mx-3 text-amber-500">×</span>
@@ -59,7 +59,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.14, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-7 max-w-3xl text-balance text-lg font-medium leading-snug text-white sm:text-xl"
+          className="hero-tagline mt-7 max-w-3xl text-balance font-medium leading-snug text-white"
         >
           {profile.tagline}
         </motion.p>
@@ -68,7 +68,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-5 max-w-2xl text-pretty text-[15px] leading-relaxed text-paper-300 sm:text-base"
+          className="hero-pitch mt-5 max-w-2xl text-pretty leading-relaxed text-paper-300"
         >
           {profile.pitch}
         </motion.p>

@@ -22,7 +22,7 @@ export function GitHubSection() {
     >
       {/* Stats strip */}
       <Reveal>
-        <div className="card grid grid-cols-2 gap-x-6 gap-y-8 p-7 lg:grid-cols-4">
+        <div className="card card-pad-stat grid grid-cols-2 gap-x-6 gap-y-8 lg:grid-cols-4">
           {githubStats.map((stat) => (
             <Metric
               key={stat.label}

@@ -172,7 +172,7 @@ export function Mapping() {
                   ref={(el) => {
                     leftRefs.current[req.id] = el;
                   }}
-                  className={`flex h-full w-full items-center gap-3.5 rounded-xl border px-4 py-3.5 text-left transition-all duration-300 ${
+                  className={`map-pad-req flex h-full w-full items-center gap-3.5 rounded-xl border text-left transition-all duration-300 ${
                     isLit
                       ? 'border-amber-500/60 bg-amber-100/50 shadow-glow'
                       : 'border-paper-300/80 bg-white hover:border-ink-600/35 hover:shadow-card'
@@ -186,10 +186,10 @@ export function Mapping() {
                     <Icon name={req.icon} className="h-4 w-4" />
                   </span>
                   <span className="min-w-0">
-                    <span className="block font-display text-sm font-semibold leading-snug text-ink-900">
+                    <span className="map-title block font-display leading-snug text-ink-900">
                       {req.title}
                     </span>
-                    <span className="mt-0.5 block text-xs leading-snug text-slateink-500">
+                    <span className="map-note mt-0.5 block leading-snug text-slateink-500">
                       {req.jd}
                     </span>
                   </span>
@@ -216,7 +216,7 @@ export function Mapping() {
                   ref={(el) => {
                     rightRefs.current[row.requirementId] = el;
                   }}
-                  className={`flex h-full w-full flex-col justify-center rounded-xl border px-5 py-4 text-left transition-all duration-300 ${
+                  className={`map-pad-evidence flex h-full w-full flex-col justify-center rounded-xl border text-left transition-all duration-300 ${
                     isLit
                       ? 'border-amber-500/60 bg-white shadow-glow'
                       : 'border-paper-300/80 bg-paper-50 hover:border-ink-600/35 hover:bg-white hover:shadow-card'
@@ -228,10 +228,10 @@ export function Mapping() {
                     {requirementById[row.requirementId].short}
                   </span>
 
-                  <span className="block font-display text-sm font-semibold leading-snug text-ink-900">
+                  <span className="map-title block font-display leading-snug text-ink-900">
                     {row.evidenceTitle}
                   </span>
-                  <span className="mt-1.5 block text-xs leading-relaxed text-slateink-500">
+                  <span className="map-note mt-1.5 block leading-relaxed text-slateink-500">
                     {row.evidence}
                   </span>
 

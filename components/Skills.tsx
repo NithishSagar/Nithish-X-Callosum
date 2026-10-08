@@ -23,7 +23,7 @@ export function Skills() {
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {skillGroups.map((group, groupIndex) => (
           <Reveal key={group.title} index={groupIndex}>
-            <article className="card h-full p-6 transition-shadow duration-300 hover:shadow-lift">
+            <article className="card card-pad h-full transition-shadow duration-300 hover:shadow-lift">
               <div className="flex items-start gap-3">
                 <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-ink-700/8 text-ink-700">
                   <Icon name={group.icon} className="h-[18px] w-[18px]" />

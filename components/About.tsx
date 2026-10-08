@@ -77,7 +77,7 @@ export function About() {
 
         {/* Facts card */}
         <Reveal index={1}>
-          <aside className="card sticky top-24 overflow-hidden p-6 sm:p-7">
+          <aside className="card card-pad-aside sticky top-24 overflow-hidden">
             <div className="flex items-start gap-3">
               <span className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-ink-700/8 text-ink-700">
                 <FiBookOpen className="h-[18px] w-[18px]" />

@@ -49,10 +49,10 @@ export function ProjectCard({ project, isOpen, onToggle }: ProjectCardProps) {
     <motion.article
       layout
       transition={{ layout: { duration: 0.32, ease: [0.22, 1, 0.36, 1] } }}
-      className={`group relative overflow-hidden rounded-2xl border bg-white transition-[box-shadow,border-color,opacity,filter] duration-300 ${
+      className={`card group relative overflow-hidden transition-[box-shadow,border-color,opacity,filter] duration-300 ${
         lit
           ? 'border-amber-500/50 shadow-glow'
-          : 'border-paper-300/70 shadow-card hover:border-ink-600/25 hover:shadow-lift'
+          : 'hover:border-ink-600/25 hover:shadow-lift'
       } ${isResearch ? 'bg-gradient-to-br from-white to-paper-50' : ''} ${
         dimmed ? 'dimmed' : ''
       }`}
@@ -71,7 +71,7 @@ export function ProjectCard({ project, isOpen, onToggle }: ProjectCardProps) {
         onClick={onToggle}
         aria-expanded={isOpen}
         aria-controls={`project-body-${project.id}`}
-        className="flex w-full flex-col gap-5 p-6 text-left sm:p-8"
+        className="card-pad flex w-full flex-col gap-5 text-left"
       >
         <div className="flex items-start justify-between gap-4">
           <div className="min-w-0">
@@ -95,7 +95,7 @@ export function ProjectCard({ project, isOpen, onToggle }: ProjectCardProps) {
               {project.title}
             </h3>
             <p className="mt-1.5 text-sm font-medium text-ink-600">{project.kicker}</p>
-            <p className="mt-3.5 max-w-2xl text-pretty text-[15px] leading-relaxed text-slateink-700">
+            <p className="prose-body mt-3.5 max-w-2xl text-pretty text-slateink-700">
               {project.summary}
             </p>
           </div>
@@ -136,7 +136,7 @@ export function ProjectCard({ project, isOpen, onToggle }: ProjectCardProps) {
             }}
             className="overflow-hidden"
           >
-            <div className="space-y-8 border-t border-paper-200 px-6 pb-8 pt-7 sm:px-8">
+            <div className="card-pad-body space-y-8 border-t border-paper-200">
               {/* Architecture strip */}
               <div>
                 <h4 className="eyebrow text-slateink-500">{labels.flow}</h4>
@@ -156,14 +156,14 @@ export function ProjectCard({ project, isOpen, onToggle }: ProjectCardProps) {
 
               {/* Problem */}
               <div className="grid gap-6 lg:grid-cols-2">
-                <div className="rounded-xl border border-paper-200 bg-paper-50 p-5">
+                <div className="card-pad-sm rounded-xl border border-paper-200 bg-paper-50">
                   <h4 className="eyebrow text-ink-600">{labels.problem}</h4>
                   <p className="mt-3 text-pretty text-sm leading-relaxed text-slateink-700">
                     {project.problem}
                   </p>
                 </div>
 
-                <div className="rounded-xl border border-paper-200 bg-paper-50 p-5">
+                <div className="card-pad-sm rounded-xl border border-paper-200 bg-paper-50">
                   <h4 className="eyebrow text-ink-600">{labels.results}</h4>
                   <ul className="mt-3 space-y-2.5">
                     {project.results.map((result) => (
@@ -205,16 +205,16 @@ export function ProjectCard({ project, isOpen, onToggle }: ProjectCardProps) {
               </div>
 
               {/* Key learning */}
-              <div className="rounded-xl border-l-[3px] border-amber-500 bg-amber-100/50 p-5">
+              <div className="card-pad-sm rounded-xl border-l-[3px] border-amber-500 bg-amber-100/50">
                 <h4 className="eyebrow text-amber-600">The generalisable part</h4>
-                <p className="mt-2.5 text-pretty text-[15px] leading-relaxed text-ink-900">
+                <p className="prose-body mt-2.5 text-pretty text-ink-900">
                   {project.learning}
                 </p>
               </div>
 
               {/* Why the methodology transfers */}
               {project.whyItMatters?.length ? (
-                <div className="rounded-xl border border-ink-600/20 bg-ink-700/[0.04] p-5">
+                <div className="card-pad-sm rounded-xl border border-ink-600/20 bg-ink-700/[0.04]">
                   <h4 className="eyebrow text-ink-600">Why this transfers to {companyShort}</h4>
                   <ul className="mt-3 grid gap-2.5 sm:grid-cols-2">
                     {project.whyItMatters.map((reason) => (

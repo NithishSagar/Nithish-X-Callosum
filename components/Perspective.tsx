@@ -116,7 +116,7 @@ export function Perspective() {
                   </span>
                   {block.heading}
                 </h3>
-                <p className="mt-3 text-pretty text-[15px] leading-relaxed text-paper-300">
+                <p className="prose-body mt-3 text-pretty text-paper-300">
                   {block.text}
                 </p>
               </article>
